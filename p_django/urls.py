@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from .views import bienvenida
+from .views import fecha_y_hora
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('bienvenido/', bienvenida),
+    path('fecha_y_hora/', fecha_y_hora)
 ]
+
