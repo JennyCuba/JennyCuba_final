@@ -12,7 +12,7 @@ def fecha_y_hora(request):
 def mi_template(request):
     
 # V1
-    archivo_abierto = open('Templates\mi_template.html')
+    archivo_abierto = open('mi_template.html')
     template = Template(archivo_abierto.read())
     archivo_abierto.close()
     
@@ -25,3 +25,15 @@ def saludo(request, nombre, apellido):
     nombre_formateado = nombre.title()
     apellido_formateado = apellido.title()
     return HttpResponse(f"Buenas {nombre_formateado} {apellido_formateado}, como va?")
+
+def mi_template2(request):
+    
+# V1
+    archivo_abierto = open('mi_template2.html')
+    template = Template(archivo_abierto.read())
+    archivo_abierto.close()
+    
+    contexto = Context()
+    template_renderizado = template.render(contexto)
+
+    return HttpResponse(template_renderizado)
