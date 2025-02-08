@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from datetime import datetime
-from django.template import Template, Context
+from django.template import Template, Context, loader
 
 def bienvenida(request):
     return HttpResponse ('<h1>Bienvenida!<h1/>')
@@ -12,7 +12,7 @@ def fecha_y_hora(request):
 def mi_template(request):
     
 # V1
-    archivo_abierto = open('mi_template.html')
+    archivo_abierto = open('Templates\mi_template.html')
     template = Template(archivo_abierto.read())
     archivo_abierto.close()
     
@@ -28,12 +28,9 @@ def saludo(request, nombre, apellido):
 
 def mi_template2(request):
     
-# V1
-    archivo_abierto = open('mi_template2.html')
-    template = Template(archivo_abierto.read())
-    archivo_abierto.close()
-    
-    contexto = Context({'Nombre': 'Jenny'})
-    template_renderizado = template.render(contexto)
+# ejemplo template con cargador
+    template = loader.get_template('mi_template2.html')
+    diccionario = {'Nombre': 'Jenny'}
+    template_renderizado = template.render(diccionario)
 
     return HttpResponse(template_renderizado)
