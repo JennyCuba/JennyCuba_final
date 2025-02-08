@@ -16,7 +16,7 @@ def mi_template(request):
     template = Template(archivo_abierto.read())
     archivo_abierto.close()
     
-    contexto = Context()
+    contexto = Context({'Nombre': 'Jenny'})
     template_renderizado = template.render(contexto)
 
     return HttpResponse(template_renderizado)
@@ -33,7 +33,7 @@ def mi_template2(request):
     template = Template(archivo_abierto.read())
     archivo_abierto.close()
     
-    contexto = Context()
+    contexto = Context({'Nombre': 'Jenny'})
     template_renderizado = template.render(contexto)
 
     return HttpResponse(template_renderizado)
