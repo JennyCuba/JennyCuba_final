@@ -8,16 +8,24 @@
 <body>
     <h1>Condicionales y bucles</h1>
     <p>
-        {{nombre}}
+        {{Nombre}}
     </p>
 
-    <p>
-        {{mi_lista}}
-    </p>
+    {% if Mis_elementos %}
+    <p>Mi lista tiene valores</p>
+    {% else %}
+    <p>Mi lista no tiene valores</p>
+    {%  endif %}
 
-    <p>
-        {{numeros}}
-    </p>
+
+    <ul>
+        {% for numero in Numeros %}
+        <li>
+            {{numero}}
+        </li>
+        {% endfor %}
+    </ul>
+        
 
 </body>
 </html>

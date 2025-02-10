@@ -49,6 +49,6 @@ def condicionales_y_bucles(request):
    
     return render(request, 'condicionales_y_bucles.html',  {
         'Nombre': 'Jenny',
-        'Mis_elementos': [],
+        'Mis_elementos': [22],
         'Numeros': list(range(15))
     })
