@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from datetime import datetime
 from django.template import Template, Context, loader
 from django.shortcuts import render
-from inicio.models import auto
+from inicio.models import Auto
 import random
 
 def bienvenida(request):
@@ -56,6 +56,9 @@ def condicionales_y_bucles(request):
     })
     
 def crear_auto(request):
-    auto = auto(marca=random.choice(['Ford','Fiat','Chevrolet','Ferrari','Mercedes']), modelo='Generico', anio=random.choice ([2020, 2021, 2022, 2023, 2024]))
-    auto.save()
+    auto = Auto(
+        marca=random.choice(['Ford', 'Fiat', 'Chevrolet', 'Ferrari', 'Mercedes']),
+        modelo='Generico',
+        anio=random.choice([2020, 2021, 2022, 2023, 2024])
+    )
     return render(request, 'registro_auto.html', {})
