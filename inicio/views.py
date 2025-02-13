@@ -2,6 +2,8 @@ from django.http import HttpResponse
 from datetime import datetime
 from django.template import Template, Context, loader
 from django.shortcuts import render
+from inicio.models import auto
+import random
 
 def bienvenida(request):
     return HttpResponse ('<h1>Bienvenida!<h1/>')
@@ -52,3 +54,8 @@ def condicionales_y_bucles(request):
         'Mis_elementos': [22],
         'Numeros': list(range(15))
     })
+    
+def crear_auto(request):
+    auto = auto(marca=random.choice(['Ford','Fiat','Chevrolet','Ferrari','Mercedes']), modelo='Generico', anio=random.choice ([2020, 2021, 2022, 2023, 2024]))
+    auto.save()
+    return render(request, 'registro_auto.html', {})

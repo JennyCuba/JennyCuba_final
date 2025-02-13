@@ -1,4 +1,4 @@
-from inicio.views import bienvenida, fecha_y_hora, mi_template, saludo, mi_template2, condicionales_y_bucles
+from inicio.views import bienvenida, fecha_y_hora, mi_template, saludo, mi_template2, condicionales_y_bucles, crear_auto
 from django.urls import path
 
 urlpatterns = [
@@ -8,4 +8,5 @@ urlpatterns = [
     path('mi_template/', mi_template),
     path('mi_template2/', mi_template2),
     path('condicionales_y_bucles/', condicionales_y_bucles),
+    path('crear_auto/', crear_auto),
 ]
