@@ -55,10 +55,14 @@ def condicionales_y_bucles(request):
         'Numeros': list(range(15))
     })
     
-def crear_auto(request):
+def crear_auto(request, marca, modelo, anio):
     auto = Auto(
-        marca=random.choice(['Ford', 'Fiat', 'Chevrolet', 'Ferrari', 'Mercedes']),
-        modelo='Generico',
-        anio=random.choice([2020, 2021, 2022, 2023, 2024])
+        marca=marca,
+        modelo=modelo,
+        anio=anio
+        #marca=random.choice(['Ford', 'Fiat', 'Chevrolet', 'Ferrari', 'Mercedes']),
+        #modelo='Generico',
+        #anio=random.choice([2020, 2021, 2022, 2023, 2024])
     )
+    auto.save()
     return render(request, 'registro_auto.html', {})

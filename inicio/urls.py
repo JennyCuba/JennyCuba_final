@@ -8,5 +8,5 @@ urlpatterns = [
     path('mi_template/', mi_template),
     path('mi_template2/', mi_template2),
     path('condicionales_y_bucles/', condicionales_y_bucles),
-    path('crear_auto/', crear_auto),
+    path('crear_auto/<str:marca>/<str:modelo/<int:anio>', crear_auto),
 ]
