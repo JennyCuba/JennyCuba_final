@@ -1,8 +1,9 @@
-from inicio.views import bienvenida, fecha_y_hora, mi_template, saludo, mi_template2, condicionales_y_bucles, crear_auto
+from inicio.views import bienvenida, fecha_y_hora, mi_template, saludo, mi_template2, condicionales_y_bucles, crear_auto, inicio
 from django.urls import path
 
 urlpatterns = [
-    path('bienvenido/', bienvenida),
+    path('', inicio),
+    path('bienvenida/', bienvenida),
     path('saludo/<str:nombre>/<str:apellido>/', saludo),
     path('fecha_y_hora/', fecha_y_hora),
     path('mi_template/', mi_template),

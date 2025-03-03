@@ -6,7 +6,12 @@ from inicio.models import Auto
 import random
 
 def bienvenida(request):
-    return HttpResponse ('<h1>Bienvenida!<h1/>')
+    return render(request, 'inicio/bienvenida.html')
+    #return HttpResponse ('<h1>Bienvenida!<h1/>')
+    
+def inicio(request):
+    return render(request, 'inicio/inicio.html')
+    #return HttpResponse ('<h1>Bienvenida!<h1/>')
 
 def fecha_y_hora(request):
     fecha_y_hora = datetime.now()
@@ -31,7 +36,7 @@ def mi_template(request):
     
 # v2 con cargador y shortcuts
     template = loader.get_template('mi_template.html')
-    return render(request, 'mi_template.html', {'Nombre': 'Jenny'})
+    return render(request, 'inicio/mi_template.html', {'Nombre': 'Jenny'})
 
 
 def mi_template2(request):
@@ -44,12 +49,12 @@ def mi_template2(request):
     #return HttpResponse(template_renderizado)
 # v2 resumida
     template = loader.get_template('mi_template2.html')
-    return render(request, 'mi_template2.html')
+    return render(request, 'inicio/mi_template2.html')
 
 def condicionales_y_bucles(request):
     
    
-    return render(request, 'condicionales_y_bucles.html',  {
+    return render(request, 'inicio/condicionales_y_bucles.html',  {
         'Nombre': 'Jenny',
         'Mis_elementos': [22],
         'Numeros': list(range(15))
@@ -59,4 +64,4 @@ def crear_auto(request, marca, modelo, anio):
     #auto = Auto(marca=random.choice(['Ford', 'Fiat', 'Chevrolet', 'Ferrari', 'Mercedes']), modelo='Generico', anio=random.choice([2020, 2021, 2022, 2023, 2024]))
     auto = Auto(marca= marca, modelo= modelo, anio=anio)
     auto.save()
-    return render(request, 'registro_auto.html', {'auto':auto})
+    return render(request, 'inicio/registro_auto.html', {'auto':auto})
