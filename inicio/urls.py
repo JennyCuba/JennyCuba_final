@@ -2,7 +2,6 @@ from inicio.views import bienvenida, fecha_y_hora, mi_template, saludo, mi_templ
 from django.urls import path
 
 urlpatterns = [
-    path('', inicio),
     path('bienvenida/', bienvenida),
     path('saludo/<str:nombre>/<str:apellido>/', saludo),
     path('fecha_y_hora/', fecha_y_hora),
