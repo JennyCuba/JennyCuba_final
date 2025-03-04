@@ -35,7 +35,7 @@ def mi_template(request):
     #return HttpResponse(template_renderizado)
     
 # v2 con cargador y shortcuts
-    template = loader.get_template('mi_template.html')
+    template = loader.get_template('inicio/mi_template.html')
     return render(request, 'inicio/mi_template.html', {'Nombre': 'Jenny'})
 
 
@@ -48,7 +48,7 @@ def mi_template2(request):
 
     #return HttpResponse(template_renderizado)
 # v2 resumida
-    template = loader.get_template('mi_template2.html')
+    template = loader.get_template('inicio/mi_template2.html')
     return render(request, 'inicio/mi_template2.html')
 
 def condicionales_y_bucles(request):

@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Página Web</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title_head %}
+    Mi template
+{% endblock title_head %}
+
+{% block h1_header %}
+    Mi template
+{% endblock h1_header %}
+
+{% block main %}
     <h1>Hola soy el html de mi segundo template!</h1>
-</body>
-</html>
+{% endblock main %}

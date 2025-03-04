@@ -7,7 +7,9 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>
-            {% block title_head %}Base{% endblock title_head%}
+            {% block title_head %}
+                Base
+            {% endblock title_head %}
         </title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -22,7 +24,8 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="#!">Inicio</a>
+                <a class="navbar-brand" href={% url "inicio:inicio" %}>Inicio</a>
+                <a class="navbar-brand" href={% url "inicio:bienvenida" %}>Bienvenida</a>
                 {% comment "" %}<a class="btn btn-primary" href="#signup">Sign Up</a>{% endcomment %}
             </div>
         </nav>
@@ -33,15 +36,13 @@
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5">{% block h1_head %}Este es mi template base{% endblock h1_head %}</h1>
+                            <h1 class="mb-5">{% block h1_header %}Base{% endblock h1_header %}</h1>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
-            <main>
-                {% block main %}{% endblock main %}
-            </main>
+        <main>{% block main %}{% endblock main %}</main>
         <!-- Footer-->
         <footer class="footer bg-light">
             <div class="container">

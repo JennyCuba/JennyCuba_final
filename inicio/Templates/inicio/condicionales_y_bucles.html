@@ -1,31 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Página Web</title>
-</head>
-<body>
-    <h1>Condicionales y bucles</h1>
-    <p>
-        {{Nombre}}
-    </p>
+{% extends "base.html" %}
 
-    {% if Mis_elementos %}
-    <p>Mi lista tiene valores</p>
-    {% else %}
-    <p>Mi lista no tiene valores</p>
-    {%  endif %}
+{% block title_head %}
+    Mi template
+{% endblock title_head %}
+
+{% block h1_header %}
+    Condicionales y bucles
+{% endblock h1_header %}
+
+{% block main %}
+<p>
+    {{Nombre}}
+</p>
+
+{% if Mis_elementos %}
+<p>Mi lista tiene valores</p>
+{% else %}
+<p>Mi lista no tiene valores</p>
+{%  endif %}
 
 
-    <ul>
-        {% for numero in Numeros %}
-        <li>
-            {{numero}}
-        </li>
-        {% endfor %}
-    </ul>
-        
-
-</body>
-</html>
+<ul>
+    {% for numero in Numeros %}
+    <li>
+        {{numero}}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock main %}
